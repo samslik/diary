@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diary</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://rawgithub.com/krzysztofbialek/Rails-Girls-Warsaw-App/master/style.css" />
+</head>
+<body>
+	<% if current_user %>
+	<%= "Jestes zalogowany jako #{current_user.email}" %>
+		<p><%= link_to("Wyloguj sie", destroy_user_session_path(@entry), :method => :delete ) %></p>
+	<% else %>
+			<p><%= link_to("Zaloguj sie", new_user_session_path(@entry)) %></p>
+	<% end %>
+
+
+	
+<%= yield %>
+
+</body>
+</html>

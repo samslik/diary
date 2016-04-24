@@ -1,0 +1,7 @@
+<div>
+   <% for entry in @entries %>
+	<%= render "entries_details", entry: entry, show_link: true %>
+<% end %>
+  </div>
+  <%= link_to("New entry", new_entry_path) %>
+ 

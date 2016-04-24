@@ -1,0 +1,7 @@
+    <% if params[:action] == "index"%>
+	<h2><%= link_to(entry.title, entry_path(entry)) %></h2>
+	<% else %>
+	<h2><%= entry.title %></h2>
+	<% end %>
+    <p><%= entry.created_at.strftime("%d:%m:%Y   %H:%M") %></p>
+    <p><%= entry.contents %></p>
